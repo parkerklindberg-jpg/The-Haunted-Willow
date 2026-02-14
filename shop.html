@@ -239,6 +239,11 @@ body::before {
 </head>
 
 <body>
+    
+<button class="cart-btn">
+🛒 Cart (<span id="cartCount">0</span>)
+</button>
+
 
 <button class="home-btn"
 onclick="window.location.href='index.html'">
@@ -263,19 +268,19 @@ Return Home
   </div>
 
   <!-- LOVE OIL (CLICKABLE) -->
-  <div class="product-card">
-    <div class="product-box"
-      onclick="openModal(
-      'https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/162CF5DA-8AA3-410D-B4C2-7B54F17BBD37.jpeg',
-      'Vow; A Love Oil — crafted to attract romance, deepen emotional bonds, and sweeten connections. Best used on candles, petitions, or personal work.'
-      )"
-      style="cursor:pointer; background-image:url('https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/162CF5DA-8AA3-410D-B4C2-7B54F17BBD37.jpeg'); background-size:cover; background-position:center;">
-    </div>
-    <div class="product-info">
-      <div class="product-name">Vow; A Love Oil</div>
-      <div class="price">$45.00</div>
-    </div>
+<div class="product-card">
+  <div class="product-box"
+    onclick="openModal(
+    'https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/162CF5DA-8AA3-410D-B4C2-7B54F17BBD37.jpeg',
+    'Vow; A Love Oil — crafted to attract romance, deepen emotional bonds, and sweeten connections. Best used on candles, petitions, or personal work.'
+    ); addToCart('Vow; A Love Oil', 45);"
+    style="cursor:pointer; background-image:url('https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/162CF5DA-8AA3-410D-B4C2-7B54F17BBD37.jpeg'); background-size:cover; background-position:center;">
   </div>
+  <div class="product-info">
+    <div class="product-name">Vow; A Love Oil</div>
+    <div class="price">$45.00</div>
+  </div>
+</div>
 
   <!-- MONEY OIL (CLICKABLE) -->
   <div class="product-card">
@@ -368,6 +373,37 @@ function openModal(imgUrl, description) {
 function closeModal() {
   document.getElementById("productModal").style.display = "none";
 }
+</script>
+
+    <script>
+/* =========================
+   CART SYSTEM
+========================= */
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+/* update cart number */
+function updateCartCount() {
+  const total = cart.reduce((sum, item) => sum + item.qty, 0);
+  document.getElementById("cartCount").innerText = total;
+}
+
+/* add item */
+function addToCart(name, price) {
+  const existing = cart.find(item => item.name === name);
+
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  updateCartCount();
+}
+
+/* load on page start */
+updateCartCount();
 </script>
 
 </body>
