@@ -1,64 +1,93 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shop | The Haunted Willow</title>
-    <style>
-        body {
-            margin: 0;
-            color: gold;
-            font-family: "Times New Roman";
-            text-align: center;
-            padding: 40px;
+<title>Full Shop | The Haunted Willow</title>
 
-            background-image: url("https://i.pinimg.com/originals/ae/bf/44/aebf440644c1232bc35440a3484dda9b.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
+<style>
+body {
+    margin: 0;
+    color: gold;
+    font-family: "Times New Roman";
+    text-align: center;
+    padding: 40px;
 
+    background-image: url("https://i.pinimg.com/originals/ae/bf/44/aebf440644c1232bc35440a3484dda9b.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.65);
-            z-index: -1;
-        }
+/* overlay */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    z-index: -1;
+}
 
-        h1 {
-            color: gold;
-            font-size: 3rem;
-            text-shadow: 0 0 20px #7cff9b;
-        }
+h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 20px #7cff9b;
+}
 
-        p {
-            color: #e6d79c;
-            font-size: 1.2rem;
-        }
+/* BIG PRODUCT GRID */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    padding: 60px;
+}
 
-        button {
-            padding: 10px 20px;
-            background: gold;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 30px;
-        }
+.product-card {
+    height: 260px;
+    border: 4px solid gold;
+    background: rgba(0,0,0,0.4);
+    box-shadow: 0 0 15px gold;
+    transition: 0.3s;
+}
 
-        button:hover {
-            background: #e6c200;
-        }
-    </style>
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 0 25px #7cff9b;
+}
+
+button {
+    padding: 10px 20px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 30px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>The Haunted Willow Shop</h1>
-<p>Products coming soon…</p>
+<h1>Full Collection</h1>
 
-<button onclick="window.location.href='index.html'">
-    Back Home
+<div class="product-grid">
+
+  <div class="product-card"></div>
+  <div class="product-card"></div>
+  <div class="product-card"></div>
+  <div class="product-card"></div>
+  <div class="product-card"></div>
+  <div class="product-card"></div>
+  <div class="product-card"></div>
+  <div class="product-card"></div>
+
+</div>
+
+<button onclick="window.location.href='shop.html'">
+Back to Shop
 </button>
+
+</body>
+</html>
+
 
 </body>
 </html>
