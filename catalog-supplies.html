@@ -48,9 +48,21 @@ body::before {
 .product-card {
     height: 220px;
     border: 4px solid gold;
-    background: rgba(0,0,0,0.4);
+
+    /* 🌑 DARK MARBLE LOOK */
+    background:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("https://www.transparenttextures.com/patterns/dark-marble.png");
+
+    background-size: cover;
+    background-position: center;
+
     box-shadow: 0 0 15px gold;
+    position: relative;
+    transition: 0.3s;
+    overflow: hidden;
 }
+
 </style>
 </head>
 
