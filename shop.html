@@ -5,22 +5,6 @@
 
 <style>
 
-.home-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 8px 18px;
-    background: gold;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    z-index: 10;
-}
-
-.home-btn:hover {
-    background: #e6c200;
-}
-
 body {
     margin: 0;
     color: gold;
@@ -28,7 +12,7 @@ body {
     text-align: center;
     padding: 40px;
 
-   
+  
     background-image: url("https://i.pinimg.com/originals/ae/bf/44/aebf440644c1232bc35440a3484dda9b.jpg");
     background-size: cover;
     background-position: center;
@@ -43,6 +27,23 @@ body::before {
     inset: 0;
     background: rgba(0,0,0,0.65);
     z-index: -1;
+}
+
+
+.home-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 18px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.home-btn:hover {
+    background: #e6c200;
 }
 
 
@@ -104,7 +105,8 @@ body::before {
 </head>
 
 <body>
-    
+
+
 <button class="home-btn"
 onclick="window.location.href='index.html'">
 Return Home
