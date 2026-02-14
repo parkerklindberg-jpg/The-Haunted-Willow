@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Haunted Willow</title>
+    <style>
+        body {
+            margin: 0;
+            color: white;
+            font-family: "Times New Roman";
+            text-align: center;
+
+            /* 🔥 FIRE BACKGROUND */
+            background-image: url("https://i.pinimg.com/originals/ae/bf/44/aebf440644c1232bc35440a3484dda9b.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* 🔮 DARK OVERLAY FOR READABILITY */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: -1;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Keeps words centered while scrolling */
+        .hero-content {
+            position: sticky;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        h1 {
+            color: gold;
+            font-size: 3rem;
+            text-shadow: 0 0 20px orange;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        button {
+            padding: 12px 24px;
+            background: gold;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #e6c200;
+        }
+
+        /* filler so page can scroll */
+        .next {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="hero-content">
+        <h1>The Haunted Willow</h1>
+        <p>Spell Oils, Herbal Blends, Witchy Items</p>
+
+        <button onclick="window.location.href='shop.html'">
+            Shop Now
+        </button>
+    </div>
+</div>
+
+<div class="next"></div>
+
+</body>
+</html>
