@@ -5,6 +5,22 @@
 
 <style>
 
+.home-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 8px 18px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.home-btn:hover {
+    background: #e6c200;
+}
+
 body {
     margin: 0;
     color: gold;
@@ -88,6 +104,11 @@ body::before {
 </head>
 
 <body>
+    
+<button class="home-btn"
+onclick="window.location.href='index.html'">
+Return Home
+</button>
 
 <h1>Supplies and Services</h1>
 <p>Select from our offerings below.</p>
