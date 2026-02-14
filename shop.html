@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="icon" type="image/png"
+<link rel="icon" type="image/png"
 href="https://i.pinimg.com/736x/ae/bf/44/aebf440644c1232bc35440a3484dda9b.jpg">
 
 <title>Shop | The Haunted Willow</title>
@@ -30,7 +30,7 @@ body::before {
     z-index: -1;
 }
 
-/* 🔥 top-right home button */
+/* home button */
 .home-btn {
     position: fixed;
     top: 20px;
@@ -67,13 +67,14 @@ body::before {
     text-align: center;
 }
 
-/* 🤍 marble image box */
+/* marble image box */
 .product-box {
     height: 220px;
     border: 4px solid gold;
     border-bottom: none;
     transition: 0.3s ease;
     overflow: hidden;
+    cursor: default;
 
     background-color: #ece8e1;
     background-image:
@@ -92,28 +93,12 @@ body::before {
     box-shadow: 0 0 15px gold;
 }
 
-/* ✅ ONLY ADDITION: IMAGE OVERRIDES FOR TWO OILS */
-.product-box.photo-love {
-    background-image: url("https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/162CF5DA-8AA3-410D-B4C2-7B54F17BBD37.jpeg") !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-.product-box.photo-money {
-    background-image: url("https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/19A8AF68-3A6A-4FEB-9429-CB4CAC8CFE41.png") !important;
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-
-/* hover glow */
 .product-box:hover {
     transform: translateY(-6px);
     box-shadow: 0 0 25px #7cff9b;
 }
 
-/* 🔥 info panel under image */
+/* info panel */
 .product-info {
     border: 4px solid gold;
     border-top: 3px solid gold;
@@ -149,6 +134,84 @@ body::before {
     background: #e6c200;
 }
 
+/* 🌑 PRODUCT MODAL OVERLAY */
+.product-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+
+/* modal container */
+.modal-box {
+    width: 900px;
+    max-width: 92%;
+    background: rgba(0,0,0,0.9);
+    border: 4px solid gold;
+    box-shadow: 0 0 40px gold;
+    padding: 30px;
+    font-family: "Times New Roman";
+    position: relative;
+}
+
+/* layout */
+.modal-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* image panel */
+.modal-image {
+    height: 320px;
+    border: 3px solid gold;
+    background-size: cover;
+    background-position: center;
+}
+
+/* description */
+.modal-description {
+    border: 3px solid gold;
+    padding: 18px;
+    text-align: left;
+    color: #e6d79c;
+    min-height: 220px;
+}
+
+/* buttons */
+.modal-buttons {
+    margin-top: 25px;
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 10px 22px;
+    background: gold;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-btn:hover {
+    background: #e6c200;
+}
+
+/* close */
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    color: gold;
+    font-size: 22px;
+    cursor: pointer;
+}
+
 </style>
 </head>
 
@@ -166,6 +229,8 @@ Return Home
 <h2 class="category-title">Spell Oils</h2>
 
 <div class="product-grid">
+
+  <!-- Protection -->
   <div class="product-card">
     <div class="product-box"></div>
     <div class="product-info">
@@ -174,22 +239,37 @@ Return Home
     </div>
   </div>
 
+  <!-- LOVE OIL (CLICKABLE) -->
   <div class="product-card">
-    <div class="product-box photo-love"></div>
+    <div class="product-box"
+      onclick="openModal(
+      'https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/162CF5DA-8AA3-410D-B4C2-7B54F17BBD37.jpeg',
+      'Love Drawing Oil — crafted to attract romance, deepen emotional bonds, and sweeten connections. Best used on candles, petitions, or personal work.'
+      )"
+      style="cursor:pointer; background-image:url('https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/162CF5DA-8AA3-410D-B4C2-7B54F17BBD37.jpeg'); background-size:cover; background-position:center;">
+    </div>
     <div class="product-info">
       <div class="product-name">Love Drawing Oil</div>
       <div class="price">$12.00</div>
     </div>
   </div>
 
+  <!-- MONEY OIL (CLICKABLE) -->
   <div class="product-card">
-    <div class="product-box photo-money"></div>
+    <div class="product-box"
+      onclick="openModal(
+      'https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/19A8AF68-3A6A-4FEB-9429-CB4CAC8CFE41.png',
+      'Money Flow Oil — designed to draw prosperity, improve financial movement, and open roads to income. Ideal for money work and business workings.'
+      )"
+      style="cursor:pointer; background-image:url('https://raw.githubusercontent.com/parkerklindberg-jpg/The-Haunted-Willow/main/19A8AF68-3A6A-4FEB-9429-CB4CAC8CFE41.png'); background-size:cover; background-position:center;">
+    </div>
     <div class="product-info">
       <div class="product-name">Money Flow Oil</div>
       <div class="price">$12.00</div>
     </div>
   </div>
 
+  <!-- Banishing -->
   <div class="product-card">
     <div class="product-box"></div>
     <div class="product-info">
@@ -197,6 +277,7 @@ Return Home
       <div class="price">$12.00</div>
     </div>
   </div>
+
 </div>
 
 <button class="catalog-btn"
@@ -208,37 +289,10 @@ View Full Catalog
 <h2 class="category-title">Spell Supplies</h2>
 
 <div class="product-grid">
-  <div class="product-card">
-    <div class="product-box"></div>
-    <div class="product-info">
-      <div class="product-name">Spell Candles</div>
-      <div class="price">$8.00</div>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-box"></div>
-    <div class="product-info">
-      <div class="product-name">Herbal Mix</div>
-      <div class="price">$8.00</div>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-box"></div>
-    <div class="product-info">
-      <div class="product-name">Ritual Salt</div>
-      <div class="price">$8.00</div>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-box"></div>
-    <div class="product-info">
-      <div class="product-name">Protection Sachet</div>
-      <div class="price">$8.00</div>
-    </div>
-  </div>
+  <div class="product-card"><div class="product-box"></div><div class="product-info"><div class="product-name">Spell Candles</div><div class="price">$8.00</div></div></div>
+  <div class="product-card"><div class="product-box"></div><div class="product-info"><div class="product-name">Herbal Mix</div><div class="price">$8.00</div></div></div>
+  <div class="product-card"><div class="product-box"></div><div class="product-info"><div class="product-name">Ritual Salt</div><div class="price">$8.00</div></div></div>
+  <div class="product-card"><div class="product-box"></div><div class="product-info"><div class="product-name">Protection Sachet</div><div class="price">$8.00</div></div></div>
 </div>
 
 <button class="catalog-btn"
@@ -250,43 +304,51 @@ View Full Catalog
 <h2 class="category-title">Spell Services</h2>
 
 <div class="product-grid">
-  <div class="product-card">
-    <div class="product-box"></div>
-    <div class="product-info">
-      <div class="product-name">Custom Spell Work</div>
-      <div class="price">$25.00</div>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-box"></div>
-    <div class="product-info">
-      <div class="product-name">Cord Cutting</div>
-      <div class="price">$25.00</div>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-box"></div>
-    <div class="product-info">
-      <div class="product-name">Energy Cleanse</div>
-      <div class="price">$25.00</div>
-    </div>
-  </div>
-
-  <div class="product-card">
-    <div class="product-box"></div>
-    <div class="product-info">
-      <div class="product-name">Protection Ritual</div>
-      <div class="price">$25.00</div>
-    </div>
-  </div>
+  <div class="product-card"><div class="product-box"></div><div class="product-info"><div class="product-name">Custom Spell Work</div><div class="price">$25.00</div></div></div>
+  <div class="product-card"><div class="product-box"></div><div class="product-info"><div class="product-name">Cord Cutting</div><div class="price">$25.00</div></div></div>
+  <div class="product-card"><div class="product-box"></div><div class="product-info"><div class="product-name">Energy Cleanse</div><div class="price">$25.00</div></div></div>
+  <div class="product-card"><div class="product-box"></div><div class="product-info"><div class="product-name">Protection Ritual</div><div class="price">$25.00</div></div></div>
 </div>
 
 <button class="catalog-btn"
 onclick="window.location.href='catalog-services.html'">
 View Full Catalog
 </button>
+
+<!-- 🌑 PRODUCT MODAL -->
+<div id="productModal" class="product-modal">
+  <div class="modal-box">
+    <div class="modal-close" onclick="closeModal()">✕</div>
+
+    <div class="modal-content">
+      <div id="modalImage" class="modal-image"></div>
+      <div id="modalDescription" class="modal-description">
+        Product description will appear here.
+      </div>
+    </div>
+
+    <div class="modal-buttons">
+      <button class="modal-btn">Buy Now</button>
+      <button class="modal-btn">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(imgUrl, description) {
+  document.getElementById("productModal").style.display = "flex";
+  document.getElementById("modalImage").style.backgroundImage =
+    "url('" + imgUrl + "')";
+  document.getElementById("modalDescription").innerText = description;
+}
+
+function closeModal() {
+  document.getElementById("productModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
 
 </body>
 </html>
