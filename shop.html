@@ -1,92 +1,62 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Full Shop | The Haunted Willow</title>
-
-<style>
-body {
-    margin: 0;
-    color: gold;
-    font-family: "Times New Roman";
-    text-align: center;
-    padding: 40px;
-
-    background-image: url("https://i.pinimg.com/originals/ae/bf/44/aebf440644c1232bc35440a3484dda9b.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-/* overlay */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.65);
-    z-index: -1;
-}
-
-h1 {
-    font-size: 3rem;
-    text-shadow: 0 0 20px #7cff9b;
-}
-
-/* BIG PRODUCT GRID */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 40px;
-    padding: 60px;
-}
-
-.product-card {
-    height: 260px;
-    border: 4px solid gold;
-    background: rgba(0,0,0,0.4);
-    box-shadow: 0 0 15px gold;
-    transition: 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 0 25px #7cff9b;
-}
-
-button {
-    padding: 10px 20px;
-    background: gold;
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 30px;
-}
-</style>
-</head>
-
 <body>
 
-<h1>Full Collection</h1>
+<h1>Supplies and Services</h1>
+<p>Select from our offerings below.</p>
+
+<!-- 🌲 SPELL OILS -->
+<h2 class="category-title">Spell Oils</h2>
 
 <div class="product-grid">
-
-  <div class="product-card"></div>
-  <div class="product-card"></div>
-  <div class="product-card"></div>
-  <div class="product-card"></div>
-  <div class="product-card"></div>
-  <div class="product-card"></div>
-  <div class="product-card"></div>
-  <div class="product-card"></div>
-
+  <div class="product-card">
+    <div class="price">$12.00</div>
+  </div>
+  <div class="product-card">
+    <div class="price">$12.00</div>
+  </div>
+  <div class="product-card">
+    <div class="price">$12.00</div>
+  </div>
+  <div class="product-card">
+    <div class="price">$12.00</div>
+  </div>
 </div>
 
-<button onclick="window.location.href='shop.html'">
-Back to Shop
+<button class="catalog-btn"
+onclick="window.location.href='catalog-oils.html'">
+View Full Catalog
+</button>
+
+<!-- 🌲 SPELL SUPPLIES -->
+<h2 class="category-title">Spell Supplies</h2>
+
+<div class="product-grid">
+  <div class="product-card"><div class="price">$8.00</div></div>
+  <div class="product-card"><div class="price">$8.00</div></div>
+  <div class="product-card"><div class="price">$8.00</div></div>
+  <div class="product-card"><div class="price">$8.00</div></div>
+</div>
+
+<button class="catalog-btn"
+onclick="window.location.href='catalog-supplies.html'">
+View Full Catalog
+</button>
+
+<!-- 🌲 SPELL SERVICES -->
+<h2 class="category-title">Spell Services</h2>
+
+<div class="product-grid">
+  <div class="product-card"><div class="price">$25.00</div></div>
+  <div class="product-card"><div class="price">$25.00</div></div>
+  <div class="product-card"><div class="price">$25.00</div></div>
+  <div class="product-card"><div class="price">$25.00</div></div>
+</div>
+
+<button class="catalog-btn"
+onclick="window.location.href='catalog-services.html'">
+View Full Catalog
 </button>
 
 </body>
-</html>
 
 
 </body>
