@@ -4,17 +4,38 @@
     <title>Shop | The Haunted Willow</title>
     <style>
         body {
-            background-color: black;
+            margin: 0;
             color: gold;
             font-family: "Times New Roman";
             text-align: center;
-            margin: 0;
             padding: 40px;
+
+            /* 🌲 SAME HAUNTED FOREST BACKGROUND */
+            background-image: url("https://i.pinimg.com/originals/ae/bf/44/aebf440644c1232bc35440a3484dda9b.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* 🌫️ DARK OVERLAY */
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: -1;
         }
 
         h1 {
             color: gold;
             font-size: 3rem;
+            text-shadow: 0 0 20px #7cff9b;
+        }
+
+        p {
+            color: #e6d79c;
+            font-size: 1.2rem;
         }
 
         button {
